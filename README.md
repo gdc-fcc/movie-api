@@ -18,10 +18,10 @@ User Stories
 - [x] authenticate should attach the decoded token to req.user.
 - [ ] `./middleware/authorize.js` should export a named function authorizeModification.
 - [ ] authorizeModification should respond 403 `{ "error": "Access denied" }` if `req.user.role` is not "parent", or if `req.user.role` is not "child" and `req.params.userId` is not the same as `req.user.id`.
-- [ ] When a POST request is made to `/api/auth/login` without a username or password field in the request body, the server should return a 400 status.
-- [ ] When a POST request is made to `/api/auth/login` with a username that does not exist, the server should return a 401 status.
-- [ ] When a POST request is made to `/api/auth/login` with a correct username but wrong password, the server should return a 401 status.
-- [ ] When a POST request is made to `/api/auth/login` with valid credentials, the server should return a 200 status with a JSON body containing a token field.
+- [x] When a POST request is made to `/api/auth/login` without a username or password field in the request body, the server should return a 400 status.
+- [x] When a POST request is made to `/api/auth/login` with a username that does not exist, the server should return a 401 status.
+- [x] When a POST request is made to `/api/auth/login` with a correct username but wrong password, the server should return a 401 status.
+- [x] When a POST request is made to `/api/auth/login` with valid credentials, the server should return a 200 status with a JSON body containing a token field.
 - [ ] When a request is made to any watchlist route without an Authorization header, the server should return a 401 status.
 - [ ] When a request is made to any watchlist route with a malformed or expired token, the server should return a 401 status.
 - [ ] When an authenticated user makes a GET request to `/api/watchlist/:userId`, the server should return a 200 status with the watchlist for that user regardless of the requester's role.
