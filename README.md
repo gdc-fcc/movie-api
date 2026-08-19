@@ -16,8 +16,8 @@ User Stories
 - [x] authenticate should respond 401 `{ "error": "No token provided." }` if there is no authorization bearer token in the headers.
 - [x] authenticate should respond 401 `{ "error": "Invalid or expired token." }` if the token is not successfully verified.
 - [x] authenticate should attach the decoded token to req.user.
-- [ ] `./middleware/authorize.js` should export a named function authorizeModification.
-- [ ] authorizeModification should respond 403 `{ "error": "Access denied" }` if `req.user.role` is not "parent", or if `req.user.role` is not "child" and `req.params.userId` is not the same as `req.user.id`.
+- [x] `./middleware/authorize.js` should export a named function authorizeModification.
+- [x] authorizeModification should respond 403 `{ "error": "Access denied" }` if `req.user.role` is not "parent", or if `req.user.role` is not "child" and `req.params.userId` is not the same as `req.user.id`.
 - [x] When a POST request is made to `/api/auth/login` without a username or password field in the request body, the server should return a 400 status.
 - [x] When a POST request is made to `/api/auth/login` with a username that does not exist, the server should return a 401 status.
 - [x] When a POST request is made to `/api/auth/login` with a correct username but wrong password, the server should return a 401 status.
