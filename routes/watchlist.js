@@ -5,7 +5,7 @@ import {authenticate} from "../middleware/authenticate.js"
 const route = express.Router()
 
 route.use(authenticate)
-route.get("/:userId/movies", (req, res) => {
+route.get("/:userId", (req, res) => {
     const userId = req.params.userId
     return res.status(200).json(db.getWatchlist(parseInt(userId)))
 })
