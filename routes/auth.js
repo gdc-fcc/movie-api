@@ -14,7 +14,7 @@ route.post("/login", (req, res) => {
         return res.status(400).json({error: "username or password missing"})
     }
     const user = findByUsername(username)
-    if (user === [] || !compareSync(password, user.passwordHash)) {
+    if (user === null || !compareSync(password, user.passwordHash)) {
         return res.status(401).json({error: "invalid credentials"})
     }
     const token = signToken({id: user.id, rule: user.role})

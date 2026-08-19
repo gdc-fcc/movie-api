@@ -1,7 +1,9 @@
 const authorizeModification = (req, res, next) => {
-    const isParent = req.user.role == "parent"
-    const isChild = req.user.role == "child"
-    const isOwner = req.params.userId == req.user.user
+    const role = req.user.role || req.user.rule
+    const id = req.user.user || req.user.id
+    const isParent = role == "parent"
+    const isChild = role == "child"
+    const isOwner = req.params.userId == id
     const unknownRole = !isParent && !isChild
     if (unknownRole || isChild && !isOwner) {
         return res.status(403).json({"error": "Access denied"})
