@@ -13,6 +13,7 @@ route.post("/login", (req, res) => {
         return res.status(400).json({error: "username or password missing"})
     }
     const user = findByUsername(username)
+    // TODO: check against hashed password. Needs rehashing
     if (user === [] || user._password != password) {
         return res.status(401).json({error: "invalid credentials"})
     }
