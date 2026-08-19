@@ -6,6 +6,9 @@ const authorizeModification = (req, res, next) => {
     if (unknownRole || isChild && !isOwner) {
         return res.status(403).json({"error": "Access denied"})
     }
+    // parse params
+    req.userId = parseInt(req.params.userId)
+    req.movieId = parseInt(req.params.movieId)
     next()
 }
 
